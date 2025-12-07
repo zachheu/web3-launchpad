@@ -13,8 +13,8 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <WagmiProvider config={config}>
-    <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
+    <WagmiProvider config={config}>
       <RainbowKitProvider
         theme={darkTheme({
           accentColor: 'hsl(183, 100%, 50%)',
@@ -35,8 +35,8 @@ const App = () => (
           </BrowserRouter>
         </TooltipProvider>
       </RainbowKitProvider>
-    </QueryClientProvider>
-  </WagmiProvider>
+    </WagmiProvider>
+  </QueryClientProvider>
 );
 
 export default App;
