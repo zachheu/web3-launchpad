@@ -6,6 +6,8 @@ import { TrustFactors } from '@/components/TrustFactors';
 import { TransactionHistory } from '@/components/TransactionHistory';
 import { AnalyzeWallet } from '@/components/AnalyzeWallet';
 import { Footer } from '@/components/Footer';
+import { ContractStatus } from '@/components/ContractStatus';
+import { OnChainTrustScore } from '@/components/OnChainTrustScore';
 
 const Index = () => {
   const { address, isConnected } = useAccount();
@@ -16,6 +18,19 @@ const Index = () => {
       
       <main className="container mx-auto px-4 pb-12">
         <HeroSection />
+        
+        {/* Contract Status */}
+        <section className="py-6">
+          <ContractStatus />
+        </section>
+
+        {/* On-Chain Trust Score */}
+        {isConnected && (
+          <section className="py-6">
+            <h2 className="text-xl font-semibold mb-4">On-Chain Trust Score</h2>
+            <OnChainTrustScore />
+          </section>
+        )}
         
         {/* Dashboard Grid */}
         <section className="py-12">
